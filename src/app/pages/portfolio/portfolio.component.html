@@ -1,0 +1,32 @@
+<div class="container animated fadeIn" *ngIf="projects">
+    <h3 class="text-center">Aplicaciones Desarrolladas</h3>
+    <hr>
+    <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-4" *ngFor="let project of projects">
+            <div class="panel panel-primary panel-box">
+                <div class="panel-heading text-center">
+                    <h3 class="panel-title">{{ project.title }}</h3>
+                </div>
+                <div class="panel-body text-justify">
+                    <img *ngIf="!project.image" src="assets/images/example-1.jpg" class="img img-responsive">
+                    <img *ngIf="project.image" src="{{ project.image }}" class="img img-responsive">
+                    <hr>
+                    <p>{{ project.description }}</p>
+                    <hr>
+
+                    <div class="buttons">
+                        <a routerLink="/admin/projects/{{project.key}}/edit" *ngIf="token" class="btn btn-warning btn-sm">
+                            <i class="glyphicon glyphicon-pencil"></i> Editar
+                        </a>
+                        <a (click)="delete(project)" *ngIf="token" class="btn btn-danger btn-sm">
+                            <i class="glyphicon glyphicon-trash"></i> Eliminar
+                        </a>
+                        <a [routerLink]="['/view', project.key]" class="btn btn-primary btn-sm pull-right">
+                            <i class="glyphicon glyphicon-eye-open"></i> Ver más...
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
