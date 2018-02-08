@@ -35,4 +35,11 @@ export class EditComponent implements OnInit
     this.ps.update(this.key, form.value);
   }
 
+  public filesToUpload: Array<File>;
+  fileChangeEvent(fileInput: any) 
+  {
+    this.filesToUpload = <Array<File>>fileInput.target.files;
+    console.log(this.filesToUpload);
+  }
+
 }
