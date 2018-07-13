@@ -13,21 +13,22 @@ import { UploadService } from '../services/upload.service';
 import { AdminComponent } from './admin.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { EditComponent } from './projects/edit.component';
+import { environment } from '../../environments/environment';
 
-export const  firebaseConfig = {
-  apiKey: "AIzaSyBHi3txJ2W_7ZGy9HO87c08TFlEyDLoXh0",
-  authDomain: "portafolio-83ae5.firebaseapp.com",
-  databaseURL: "https://portafolio-83ae5.firebaseio.com",
-  storageBucket: "portafolio-83ae5.appspot.com",
-  messagingSenderId: "527318082957"
-};
+// export const  firebaseConfig = {
+//   apiKey: "AIzaSyBHi3txJ2W_7ZGy9HO87c08TFlEyDLoXh0",
+//   authDomain: "portafolio-83ae5.firebaseapp.com",
+//   databaseURL: "https://portafolio-83ae5.firebaseio.com",
+//   storageBucket: "portafolio-83ae5.appspot.com",
+//   messagingSenderId: "527318082957"
+// };
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     ADMIN_ROUTES,
-    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
     AngularFireDatabaseModule
   ],

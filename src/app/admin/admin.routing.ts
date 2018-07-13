@@ -14,7 +14,7 @@ const pagesRoutes: Routes = [
         children: [
             { path: '', component: LoginComponent },
             { path: 'projects/:key/edit', component: EditComponent },
-            { path: 'projects', component: ProjectsComponent },
+            { path: 'projects', component: ProjectsComponent  },
         ]
     },
 ];

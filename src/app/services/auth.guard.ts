@@ -13,8 +13,8 @@ export class AuthGuard implements CanActivate
 
   canActivate() 
   {
-    if(this.authService.getToken() != 'undefined') return true;
-    else this.router.navigate(['/home']);
-    return true;
+    if(this.authService.estaLogueado()) return true;
+    else this.router.navigate(['/']);
+    // return true;
   }
 }

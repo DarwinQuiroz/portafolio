@@ -9,7 +9,7 @@ import swal from 'sweetalert';
 export class AuthService 
 {
   user: Observable<firebase.User>;
-  public token;
+  token: string;
 
   constructor(
     public router: Router,
@@ -46,5 +46,10 @@ export class AuthService
     else this.token = null;
 
     return this.token;
+  }
+
+  estaLogueado():boolean
+  {
+    return (this.token.length > 5) ? true : false;
   }
 }

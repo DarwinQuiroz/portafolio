@@ -19,7 +19,7 @@ export class LoginComponent implements OnInit
       this.user = new User('', '');
     }
 
-  ngOnInit() 
+  ngOnInit()
   {
     if(this.authService.getToken())
     {
